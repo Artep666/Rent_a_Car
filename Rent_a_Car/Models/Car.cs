@@ -8,16 +8,17 @@ namespace Rent_a_Car.Models
     {
         //Information for the database for the cars with get and set
         public int Id { get; set; }
+        [Required]
         public string Brand { get; set; }
-
+        [Required]
         public string Model { get; set; }
-
+        [Required]
         public int Year { get; set; }
-
+        [Required]
         public string Engine { get; set; }
-
-        public int passengerSeats { get; set; 
-        }
+        [Required]
+        public int passengerSeats { get; set; }
+        [Required]
         public double RentaDay { get; set; }
     }
 }

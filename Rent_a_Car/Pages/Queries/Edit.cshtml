@@ -35,6 +35,11 @@
                 <span asp-validation-for="Query.UserWantingTheCar" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="Query.Status" class="control-label"></label>
+                <input asp-for="Query.Status" class="form-control" />
+                <span asp-validation-for="Query.Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>

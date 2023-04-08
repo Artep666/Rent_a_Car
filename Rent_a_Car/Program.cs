@@ -2,6 +2,8 @@
 using Microsoft.Extensions.DependencyInjection;
 using Rent_a_Car.Models;
 using Rent_a_Car.Data;
+using Rent_a_Car;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -25,6 +27,9 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+var startup = new Startup(builder.Configuration);
+startup.ConfigureServices(builder.Services); // calling ConfigureServices method
+startup.Configure(app, builder.Environment); // calling Configure method
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
