@@ -1,0 +1,49 @@
+﻿@page
+@model Rent_a_Car.Pages.Queries.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Query</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Query.WantedCar" class="control-label"></label>
+                <input asp-for="Query.WantedCar" class="form-control" />
+                <span asp-validation-for="Query.WantedCar" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Query.FromDate" class="control-label"></label>
+                <input asp-for="Query.FromDate" class="form-control" />
+                <span asp-validation-for="Query.FromDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Query.ToDate" class="control-label"></label>
+                <input asp-for="Query.ToDate" class="form-control" />
+                <span asp-validation-for="Query.ToDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Query.UserWantingTheCar" class="control-label"></label>
+                <input asp-for="Query.UserWantingTheCar" class="form-control" />
+                <span asp-validation-for="Query.UserWantingTheCar" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
