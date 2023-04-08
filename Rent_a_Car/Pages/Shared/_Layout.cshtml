@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -18,6 +22,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
@@ -31,8 +36,23 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Queries/Index">Queries</a>
                         </li>
+                        @if (SignInManager.IsSignedIn(User))
+                        {
+
+                            <!--Events-->
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Events</a>
+                                <div class="dropdown-menu">
+                                    <a class="nav-link text-dark" asp-area="Identity" asp-page="/Events/AllEvents" title="All Events">All Events</a>
+
+                                    <a class="nav-link text-dark" asp-area="Identity" asp-page="/Events/MyEvents" title="My Events">My Events</a>
+                                </div>
+                            </li>
+                        }
                     </ul>
                 </div>
+                <partial name="_LoginPartial" />
+
             </div>
         </nav>
     </header>

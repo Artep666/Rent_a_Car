@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Rent_a_Car.Models;
 using Rent_a_Car.Data;
 using Rent_a_Car;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,7 +12,24 @@ builder.Services.AddRazorPages();
 builder.Services.AddDbContext<Rent_a_CarContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Rent_a_CarContext") ?? throw new InvalidOperationException("Connection string 'Rent_a_CarContext' not found.")));
 
+
+// Add services to the container.
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<Rent_a_CarContext>(options =>
+    options.UseSqlServer(connectionString));
+
+builder.Services.AddDefaultIdentity<IdentityUser>(options =>
+{
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequiredLength = 6;
+    options.Password.RequireUppercase = false;
+    options.SignIn.RequireConfirmedAccount = true;
+})
+    .AddEntityFrameworkStores<Rent_a_CarContext>();
+builder.Services.AddRazorPages();
+
 var app = builder.Build();
+
 
 using (var scope = app.Services.CreateScope())
 {
