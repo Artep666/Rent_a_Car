@@ -6,7 +6,9 @@ namespace Rent_a_Car.Models
 {
     public class Car
     {
-        //Information for the database for the cars with get and set
+        //Information for creating the table for the cars with get and set
+        //The [Required] attribute indicate that a property must have a value. 
+
         public int Id { get; set; }
         [Required]
         public string Brand { get; set; }

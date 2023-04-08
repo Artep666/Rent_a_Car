@@ -4,6 +4,8 @@ namespace Rent_a_Car.Models
 {
     public class Customer
     {
+        //Information for creating the table for the customers with get and set
+
         //The [Required] attribute indicate that a property must have a value. 
         [Key]
         public int Id { get; set; }

@@ -8,6 +8,7 @@ using Rent_a_Car.Models;
 
 namespace Rent_a_Car.Data
 {
+    //Context for the database
     public class Rent_a_CarContext : IdentityDbContext
     {
         public Rent_a_CarContext (DbContextOptions<Rent_a_CarContext> options)

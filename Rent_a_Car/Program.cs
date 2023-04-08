@@ -13,7 +13,7 @@ builder.Services.AddDbContext<Rent_a_CarContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Rent_a_CarContext") ?? throw new InvalidOperationException("Connection string 'Rent_a_CarContext' not found.")));
 
 
-// Add services to the container.
+// Add services to the container so the Identity scaffold works
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<Rent_a_CarContext>(options =>
     options.UseSqlServer(connectionString));
