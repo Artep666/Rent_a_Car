@@ -35,13 +35,11 @@ namespace Rent_a_Car.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Username = table.Column<string>(type: "nvarchar(1)", nullable: false),
-                    Password = table.Column<string>(type: "nvarchar(1)", nullable: false),
                     FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    EGN = table.Column<string>(type: "nvarchar(1)", nullable: false),
-                    PhoneNum = table.Column<string>(type: "nvarchar(1)", nullable: false),
-                    email = table.Column<string>(type: "nvarchar(1)", nullable: false),
+                    EGN = table.Column<int>(type: "int", nullable: false),
+                    PhoneNum = table.Column<int>(type: "int", nullable: false),
+                    email = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Status = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
