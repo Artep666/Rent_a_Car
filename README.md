@@ -72,13 +72,6 @@ We are still working on the feature of authorization so the normal user and the 
 * [Samuil](https://github.com/Samsuno1)
 
 
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 
 
 <!-- CONTACT -->
